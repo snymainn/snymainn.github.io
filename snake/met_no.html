@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Parse Nested JSON Data in JavaScript</title>
+</head>
+<body>
+    <script>
+    /* Storing multi-line JSON string in a JS variable
+    using the new ES6 template literals */
+    var json = `
+{"type":"Feature","geometry":{"type":"Point","coordinates":[18.9427,69.6827,58]},"properties":{"meta":{"updated_at":"2022-04-27T18:09:57Z","units":{"air_temperature":"celsius","precipitation_amount":"mm","precipitation_rate":"mm/h","relative_humidity":"%","wind_from_direction":"degrees","wind_speed":"m/s","wind_speed_of_gust":"m/s"},"radar_coverage":"ok"},"timeseries":[{"time":"2022-04-27T18:10:00Z","data":{"instant":{"details":{"air_temperature":-2.0,"precipitation_rate":0.0,"relative_humidity":79.2,"wind_from_direction":328.0,"wind_speed":6.5,"wind_speed_of_gust":11.4}},"next_1_hours":{"summary":{"symbol_code":"cloudy"},"details":{"precipitation_amount":0.0}}}},{"time":"2022-04-27T18:15:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T18:20:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T18:25:00Z","data":{"instant":{"details":{"precipitation_rate":0.1}}}},{"time":"2022-04-27T18:30:00Z","data":{"instant":{"details":{"precipitation_rate":0.1}}}},{"time":"2022-04-27T18:35:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T18:40:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T18:45:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T18:50:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T18:55:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:00:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:05:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:10:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:15:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:20:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:25:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:30:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:35:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:40:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:45:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:50:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T19:55:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}},{"time":"2022-04-27T20:00:00Z","data":{"instant":{"details":{"precipitation_rate":0.0}}}}]}}
+    `;
+    
+    // Converting JSON object to JS object
+    var obj = JSON.parse(json);
+    
+    // Define recursive function to print nested values
+    function printValues(obj) {
+        for(var k in obj) {
+            if(obj[k] instanceof Object) {
+                document.write("&nbsp;&nbsp;&nbsp;");
+                printValues(obj[k]);
+                document.write("<br>");
+            } else {
+                document.write(k + ":" + obj[k] + ",");
+            };
+        }
+    };
+    
+    // Printing all the values from the resulting object
+    printValues(obj);
+    
+    document.write("<hr>");
+    // Printing a single value
+    document.write(obj["properties"]["meta"]["updated_at"] + "<br>");  
+    </script>
+</body>
+</html>
