@@ -1,14 +1,15 @@
 @import "{{ site.theme }}";
 
-.site-title {
-  display: none;
-}
 .site-header {
-  display: none;
+  width: 0%;
+  padding: 0px;
 }
 
-header {
-  display: none;
+body{
+    text-align:left;
+    color:#333;
+    margin: 1% 4%;
+    background-color: #D8D6D2;
 }
 
 
