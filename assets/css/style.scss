@@ -4,6 +4,15 @@
 @import "{{ site.theme }}";
 
 .site-title {
- display: none;
+  pointer-events: none;
+  cursor: default;
+  display: none;
+}
+
+.site-title[href] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  display: none;
 }
 
