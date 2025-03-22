@@ -121,11 +121,13 @@ LC_MESSAGES=en_US.UTF-8
 vim /etc/vconsole.conf
 KEYMAP=no-latin1
 ```
+
 - Create hostname file
 ```
 vim /etc/hostname 
-<my hostname>
+myhostname
 ```
+
 - Create hosts file
 ```
 vim /etc/hosts
