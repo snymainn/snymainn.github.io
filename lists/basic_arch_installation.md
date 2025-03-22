@@ -160,3 +160,40 @@ exit
 reboot
 ```
 
+## Add network again and user
+
+- Add wifi network again if using wifi
+```
+iwctl
+station <device> connect <ssid name>
+```
+- Add user with password
+```
+useradd -m <name>
+passwd <name>
+```
+
+## Add user to sudoers
+- Make sure vim is installed
+- Add EDITOR=vim to environment, e.g. update .bashrc with `export EDITOR=vim`
+- Edit /etc/sudoers file with `visudo` command
+* Add the following to the file:
+<user> ALL=(ALL) ALL
+
+## Add some applications
+
+- Web browser
+```
+pacman -S vivaldi
+```
+- Tools
+```
+pacman -S htop
+```
+
+## Configure sound
+- Add alsa-utils and **unmute master**
+```
+pacman -S alsa-utils
+```
+
