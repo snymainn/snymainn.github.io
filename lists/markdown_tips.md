@@ -7,7 +7,7 @@ You can look at the processing in the Actions tab on GitHub.
 This will be a very short guide on how to control the look of the html pages produced.
 
 The look is controlled by themes that can be given in a _config.yml file. 
-If you do ==not== make this file a default theme is used, which currently seems to be [jekyll-theme-primer-0.6.0](https://github.com/pages-themes/primer). Instruction on how to use can be found on its GitHub page and also how it looks. But it is not necessary to follow all the instructions.
+If you do **not** make this file a default theme is used, which currently seems to be [jekyll-theme-primer-0.6.0](https://github.com/pages-themes/primer). Instruction on how to use can be found on its GitHub page and also how it looks. But it is not necessary to follow all the instructions.
 
 The steps I followed to get rid of the header and footer were:
 

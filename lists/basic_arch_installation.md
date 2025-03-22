@@ -69,7 +69,7 @@ mkfs.btrfs /dev/<home device>
 
 ## Mount filesystem and install packages
 
-=If the installation somehow get stuck in a bad state, e.g. you are missing a package, but can connect to the internet to download it, this is where you continue after booting from the ISO image again
+**If the installation somehow get stuck in a bad state, e.g. you are missing a package, but can connect to the internet to download it, this is where you continue after booting from the ISO image again**
 
 - Mount the root, home and swap partitions
 ```
@@ -148,7 +148,7 @@ sudo echo "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi11n.
 ```
 # It is important the the last config step reports that a linux image is found
 pacman -S grub os-prober
-grub-install /dev/sda
+grub-install /dev/<main device without number>
 grub-mkconfig –o /boot/grub/grub.cfg
 ```
 
