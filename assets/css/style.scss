@@ -1,8 +1,4 @@
 ---
-These comment start and stop things must be here for the theme to use the css statements below.
-I find this strange, but whatever.
-And the import statement must also be there, to ensure the theme is 
-imported before the css modifications is done.
 ---
 
 @import "{{ site.theme }}";
