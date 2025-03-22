@@ -1,14 +1,11 @@
----
----
 
-@import "{{ site.theme }}";
 
 body {
   margin: 2% 2% 2% 2%;
   background-color: #D8D6D2;
 }
 
-.div-menu {
+.outerFrame {
   padding: 0px 0px 0% 0px;
   margin: 10px 1px 10px 0px;
   background: white;
@@ -17,7 +14,7 @@ body {
   width:100%;
 }
 
-.menuBox{
+.innerFrame{
   background-color: #D8D6D2;
   border-radius: 10px;
   margin: 2% 2% 2% 2%;
