@@ -34,7 +34,7 @@ body {
 ## Use the generated html pages
 
 Remember to link to html variants of your Markdown pages in e.g. index.html.
-E.g. this page is name markdown_pages.md, but you must refer to markdown_pages.html to view it. The html file is generated every time you push and update and not a file you need to make manually.
+E.g. this page is name markdown_pages.md, but you must refer to markdown_pages.html to view it. The html file is generated every time you push an update and not a file you need to make manually.
 
 
 
