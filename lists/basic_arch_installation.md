@@ -75,7 +75,6 @@ mkfs.btrfs /dev/<home device>
 ```
 mount /dev/<root partition> /mnt
 swapon /dev/<swap partition>
-
 # If you created and home partition
 mkdir /mnt/home
 mount /dev/<home partition> /mnt/home
@@ -83,6 +82,7 @@ mount /dev/<home partition> /mnt/home
 mkdir /mnt/efi
 mount /dev/<efi partition> /mnt/efi
 ```
+
 - Install the basic packages to root at /mnt/
 ```
 pacstrap /mnt base based-devel linux linux-firmware dhcpcd vim man-db man-pages texinfo iwd
