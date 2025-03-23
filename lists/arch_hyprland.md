@@ -55,7 +55,7 @@ vim ~/.config/hypr/hyprland.conf
 env = GTK_THEME,Adwaita:dark
 ```
 
-- Enable kitty as terminal in nemo
+- Run once in terminal to enable kitty as terminal in nemo
 
 ```
 gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
