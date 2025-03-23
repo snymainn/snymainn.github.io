@@ -187,12 +187,17 @@ pacman -S vivaldi
 ```
 - Tools
 ```
-pacman -S htop
+pacman -S htop openssh
+# Add AllowUsers to /etc/ssh/sshd_config
+systemctl enable sshd
 ```
 
 ## Configure sound
-- Add alsa-utils and **unmute master**
+- Add alsa-utils
 ```
+# Alsa utils will install and enable service alsa-restore
 pacman -S alsa-utils
+# Pulseaudio is a server that connects to alsa to control it
+pacman -Sy pulseaudio pulseaudio-alsa pulseaudio-bluetooth
 ```
 
