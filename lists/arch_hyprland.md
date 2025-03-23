@@ -70,7 +70,7 @@ enable_audio_bell no
 #Easy way to get ctrl+c and ctrl+v to wrk between applications
 #No need to install xclip or wl-clipboard
 #But middle click does not work yet, seems to be different clipboard
-#Copy from vim to other windows also does not work, but the other way works
+#Remember to hold down shift when marking text in vim to copy
 map ctrl+c copy_and_clear_or_interrupt
 map ctrl+v paste_from_clipboard
 ```
