@@ -49,6 +49,13 @@ vim ~/.config/hypr/hyprland.conf
 env = GTK_THEME,Adwaita:dark
 ```
 
+- Enable kitty as terminal in nemo
+
+```
+vim ~/.config/hypr/hyprland.conf
+exec-once = gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+```
+
 - Disable bell and enable cut and paste in kitty terminal
 
 ```
@@ -58,12 +65,12 @@ enable_audio_bell no
 #Easy way to get ctrl+c and ctrl+v to wrk between applications
 #No need to install xclip or wl-clipboard
 #But middle click does not work yet, seems to be different clipboard
+#Copy from vim to other windows also does not work, but the other way works
 map ctrl+c copy_and_clear_or_interrupt
 map ctrl+v paste_from_clipboard
 ```
 
 - Fix monitor layout
-https://wiki.hyprland.org/Configuring/Monitors/
 
 ```
 vim ~/.config/hypr/hyprland.conf
@@ -113,7 +120,7 @@ cp /etc/xdg/waybar/style.css ~/.config/waybar/
 +    //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 +    //    "format-alt": "{:%Y-%m-%d}"
 +    //},
-#Add border-radio in style.css for rounded corners
+#Add border-radius in style.css for rounded corners
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
