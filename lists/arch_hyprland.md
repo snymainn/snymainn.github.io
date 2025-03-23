@@ -48,7 +48,14 @@ vim ~/.config/hypr/hyprland.conf
 exec-once = waybar -c ~/.config/waybar/waybar.conf
 mkdir ~/.config/waybar
 cp /etc/xdg/waybar/config.jsonc ~/.config/waybar/
+cp /etc/xdg/waybar/style.css ~/.config/waybar/
 
+```
+
+- Disable bell in kitty terminal
+```
+vim .config/kitty/kitty.conf
+enable_audio_bell no
 ```
 
 
