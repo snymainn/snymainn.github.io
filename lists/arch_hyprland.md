@@ -50,6 +50,7 @@ env = GTK_THEME,Adwaita:dark
 ```
 
 - Disable bell and enable cut and paste in kitty terminal
+
 ```
 vim .config/kitty/kitty.conf
 enable_audio_bell no
@@ -63,6 +64,7 @@ map ctrl+v paste_from_clipboard
 
 - Fix monitor layout
 https://wiki.hyprland.org/Configuring/Monitors/
+
 ```
 vim ~/.config/hypr/hyprland.conf
 #List your monitors to get the names
@@ -78,6 +80,7 @@ monitor = eDP-1, disable
 ```
 
 # Install and configure waybar
+
 ```
 sudo pacman -Sy waybar
 vim ~/.config/hypr/hyprland.conf
