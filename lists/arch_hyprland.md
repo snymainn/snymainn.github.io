@@ -3,7 +3,7 @@
 - Install hyprland and launch hyprland
 ```
 # As your own user
-sudo pacman -Sy hyprland kitty dolphin wofi swaylock
+sudo pacman -Sy hyprland kitty nemo wofi swaylock
 hyprland
 # Exit hyprland with modifier key and M
 ```
@@ -41,21 +41,86 @@ vim ~/.config/hypr/hyprland.conf
 bind = $mainMod, L, exec, swaylock -f -c 000000
 ```
 
-- Install waybar
+- Enable dark mode in launcher drun and filebrowser nemo
+
+```
+vim ~/.config/hypr/hyprland.conf
+env = GTK_THEME,Adwaita:dark
+```
+
+- Disable bell and enable cut and paste in kitty terminal
+```
+vim .config/kitty/kitty.conf
+enable_audio_bell no
+# Easy way to get ctrl+c and ctrl+v to wrk between applications
+# No need to install xclip or wl-clipboard
+# But middle click does not work yet, seems to be different clipboard
+map ctrl+c copy_and_clear_or_interrupt
+map ctrl+v paste_from_clipboard
+```
+
+- Fix monitor layout
+https://wiki.hyprland.org/Configuring/Monitors/
+```
+vim ~/.config/hypr/hyprland.conf
+# List your monitors to get the names
+hyprctl monitors all
+
+# Default, use this when only laptop
+# monitor=,preferred,auto,1
+
+# Using only desktop monitor
+monitor = HDMI-A-1, preferred, 0x0, 1
+monitor = eDP-1, disable
+
+# Replace last with this to also use laptop monitor to the right
+#monitor = eDP-1, preferred, 3780x0, 1
+```
+
+# Install and configure waybar
 ```
 sudo pacman -Sy waybar
 vim ~/.config/hypr/hyprland.conf
-exec-once = waybar -c ~/.config/waybar/waybar.conf
+exec-once = waybar
 mkdir ~/.config/waybar
 cp /etc/xdg/waybar/config.jsonc ~/.config/waybar/
 cp /etc/xdg/waybar/style.css ~/.config/waybar/
 
+# Main changes in ~/.config/waybar/config.jsonc
+# Remove reference to sway since I use hyprland
+     "modules-left": [
+-        "sway/workspaces",
+-        "sway/mode",
+-        "sway/scratchpad",
+-        "custom/media"
++        "hyprland/workspaces",
+     ],
+
+          "modules-center": [
+-        "sway/window"
++        "hyprland/window"
+     ],
+# Remove clock since they crashes my waybar
+-    "clock": {
+-        // "timezone": "America/New_York",
+-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+-        "format-alt": "{:%Y-%m-%d}"
+-    },
++    //"clock": {
++    //    // "timezone": "America/New_York",
++    //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
++    //    "format-alt": "{:%Y-%m-%d}"
++    //},
+
+# Add border-radio in style.css for rounded corners
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
++   border-radius: 10;
+ }
+
 ```
 
-- Disable bell in kitty terminal
-```
-vim .config/kitty/kitty.conf
-enable_audio_bell no
-```
 
 
