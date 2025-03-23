@@ -29,10 +29,10 @@ input {
 ```
 
 - Set scaling to 1 to avoid fuzzy web browser
+
 ```
 vim ~/.config/hypr/hyprland.conf
 monitor=,preferred,auto,1
-    
 ```
 
 - Enable screenlocker
