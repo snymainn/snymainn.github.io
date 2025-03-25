@@ -3,7 +3,7 @@
 - Install hyprland and launch hyprland
 ```
 # As your own user
-sudo pacman -Sy hyprland kitty nemo wofi swaylock
+sudo pacman -Sy hyprland kitty nemo wofi swaylock brightnessctl
 hyprland
 # Exit hyprland with modifier key and M
 ```
