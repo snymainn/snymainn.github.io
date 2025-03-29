@@ -187,7 +187,7 @@ pacman -S vivaldi
 ```
 - Tools
 ```
-pacman -S htop openssh
+pacman -S htop openssh libreoffice-still jotta-cli keepassxc
 # Add AllowUsers to /etc/ssh/sshd_config
 systemctl enable sshd
 ```
