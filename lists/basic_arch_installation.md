@@ -187,17 +187,17 @@ pacman -S vivaldi
 ```
 - Tools
 ```
-pacman -S htop openssh libreoffice-still keepassxc
+pacman -S git htop openssh libreoffice-still keepassxc
 # Add AllowUsers to /etc/ssh/sshd_config
 systemctl enable sshd
 ```
 
 ## Configure sound
 - Add alsa-utils
+- Alsa utils will install and enable service alsa-restore
+- Pulseaudio is a server that connects to alsa to control it
+
 ```
-# Alsa utils will install and enable service alsa-restore
-pacman -S alsa-utils
-# Pulseaudio is a server that connects to alsa to control it
-pacman -Sy pulseaudio pulseaudio-alsa pulseaudio-bluetooth
+pacman -Sy alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth
 ```
 
