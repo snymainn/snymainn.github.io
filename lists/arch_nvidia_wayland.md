@@ -11,10 +11,8 @@ This will build and install
 - nvidia-470xx-dkms : The driver
 - nvidia-470xx-utils
 
-
-sudo pacman -S base-devel linux-headers git nano --needed
-
 ```
+sudo pacman -Sy linux-headers
 git clone https://aur.archlinux.org/nvidia-470xx-utils.git
 cd nvidia-470xx-utils
 makepkg -si
@@ -71,6 +69,6 @@ sudo vim /etc/pacman.conf
 #UNCOMMENT THESE
 [multilib]
 Include = /etc/pacman.d/mirrorlist
-sudo pacman -Sy
+sudo pacman -Sy steam
 ```
 
