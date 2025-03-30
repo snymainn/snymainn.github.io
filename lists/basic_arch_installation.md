@@ -85,7 +85,7 @@ mount /dev/<efi partition> /mnt/efi
 
 - Install the basic packages to root at /mnt/
 ```
-pacstrap /mnt base based-devel linux linux-firmware dhcpcd vim man-db man-pages texinfo iwd
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim man-db man-pages texinfo iwd
 ```
 - Generate fstab with old style device names (use -U for new UUID names)
 ```
