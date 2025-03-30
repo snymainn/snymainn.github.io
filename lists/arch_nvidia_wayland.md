@@ -16,7 +16,7 @@ This will build and install
 
 **It is essential** to install **linux-headers** or there will be no modules to load. Installing linux-headers after install of nvidia-470xx-utils will actually trigger install of modules.  
 
-The lib32-nvidia-470xx-utils is the package that provide lib32_vulkan_driver for nvidia as is **essential for steam** to be able to connect to vulkan.
+The lib32-nvidia-470xx-utils is the package that provide lib32_vulkan_driver for nvidia and is **essential for steam** to be able to connect to vulkan.
 
 ```
 sudo pacman -Sy linux-headers
