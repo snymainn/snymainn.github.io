@@ -6,20 +6,30 @@ There are two kernel parameters for the nvidia_drm module to be considered: mode
 
 ### Build and install driver from AUR
 
+You must find your own driver, the 470xx applies to my GT 750M.
+
 This will build and install
 - opencl-nvidia-470xx
 - nvidia-470xx-dkms : The driver
 - nvidia-470xx-utils
+- lib32-nvidia-470xx-utils
+
+**It is essential** to install **linux-headers** or there will be no modules to load. Installing linux-headers after install of nvidia-470xx-utils will actually trigger install of modules.  
+
+The lib32-nvidia-470xx-utils is the package that provide lib32_vulkan_driver for nvidia as is **essential for steam** to be able to connect to vulkan.
 
 ```
 sudo pacman -Sy linux-headers
 git clone https://aur.archlinux.org/nvidia-470xx-utils.git
 cd nvidia-470xx-utils
 makepkg -si
+git clone https://aur.archlinux.org/lib32-nvidia-470xx-utils.git
+cd lib32-nvidia-470xx-utils
+makepkg -si
 ```
 
-**It is not** necessary to:
-- modify mkinitcpio to load modules early
+**It is NOT** necessary to:
+- modify mkinitcpio to load modules early or remove kms(nouvaeu driver)
 - set drm kernel parameters in grub or systemd
 - add pacman hook
 
@@ -72,3 +82,13 @@ Include = /etc/pacman.d/mirrorlist
 sudo pacman -Sy steam
 ```
 
+### Play games
+
+- For native linux games add `-vulkan` in Launch options for game.
+- For windows games
+  - Add `-vulkan` in Launch options for game
+  - Select Proton under Compatibilty
+
+Thats it. In summary clone two packages from AUR, build and install them togheter with linux-headers. A range of other packages will also be installed because `-s` to makepkg will resolve dependencies. 
+
+In my experience the packages themselves mutes the nouvaeu driver and no other config is necessary.
