@@ -135,5 +135,10 @@ cp /etc/xdg/waybar/style.css ~/.config/waybar/
 
 ```
 
+# Fonts
+
+```
+sudo pacman -Sy noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
+```
 
 
