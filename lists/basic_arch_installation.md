@@ -187,7 +187,7 @@ pacman -S vivaldi
 ```
 - Tools
 ```
-pacman -S git htop openssh libreoffice-still keepassxc vscode
+pacman -S git htop openssh libreoffice-still keepassxc vscode shotwell
 # Add AllowUsers to /etc/ssh/sshd_config
 systemctl enable sshd
 ```
