@@ -4,7 +4,7 @@
 
 There are two kernel parameters for the nvidia_drm module to be considered: modeset and fbdev. Both are enabled by default when using the nvidia-utils package. NVIDIA also plans to enable them by default in a future release.
 
-### Build and install driver from AUR
+### Build and install driver from AUR for old cards
 
 You must find your own driver, the 470xx applies to my GT 750M.
 
@@ -14,7 +14,18 @@ This will build and install
 - nvidia-470xx-utils
 - lib32-nvidia-470xx-utils
 
-**It is essential** to install **linux-headers** or there will be no modules to load. Installing linux-headers after install of nvidia-470xx-utils will actually trigger install of modules.  
+### For new cards
+
+Just install nvidia-open.
+
+**NOTE: Select correct driver that shall provide the lib32-vulkan-driver**
+
+```
+sudo pacman -Sy nvidia-open
+#SELECT lib32-nvidia-utils when asked!!!
+```
+
+**It is essential** to install **linux-headers** FOR OLDER CARDS or there will be no modules to load. Installing linux-headers after install of nvidia-470xx-utils will actually trigger install of modules.  
 
 The lib32-nvidia-470xx-utils is the package that provide lib32_vulkan_driver for nvidia and is **essential for steam** to be able to connect to vulkan.
 
@@ -32,6 +43,8 @@ makepkg -si
 - modify mkinitcpio to load modules early or remove kms(nouvaeu driver)
 - set drm kernel parameters in grub or systemd
 - add pacman hook
+
+**And this applies to both new and old cards!!!**
 
 ### Monitoring and performance checkingtool
 
@@ -88,6 +101,8 @@ sudo pacman -Sy steam
 - For windows games
   - Add `-vulkan` in Launch options for game
   - Select Proton under Compatibilty
+
+Even though you have no integrated graphics card, the fps will be around 30 without the `vulkan` option, and much better with the `vulkan` option. 
 
 Thats it. In summary clone two packages from AUR, build and install them togheter with linux-headers. A range of other packages will also be installed because `-s` to makepkg will resolve dependencies. 
 

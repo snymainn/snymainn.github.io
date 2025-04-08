@@ -213,3 +213,7 @@ systemctl enable sshd
 pacman -Sy alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol
 ```
 
+## Disable annoying bell in login shell
+
+Add `set bell-style none` to `/etc/inputrc`
+
