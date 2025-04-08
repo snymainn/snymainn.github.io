@@ -14,17 +14,6 @@ This will build and install
 - nvidia-470xx-utils
 - lib32-nvidia-470xx-utils
 
-### For new cards
-
-Just install nvidia-open.
-
-**NOTE: Select correct driver that shall provide the lib32-vulkan-driver**
-
-```
-sudo pacman -Sy nvidia-open
-#SELECT lib32-nvidia-utils when asked!!!
-```
-
 **It is essential** to install **linux-headers** FOR OLDER CARDS or there will be no modules to load. Installing linux-headers after install of nvidia-470xx-utils will actually trigger install of modules.  
 
 The lib32-nvidia-470xx-utils is the package that provide lib32_vulkan_driver for nvidia and is **essential for steam** to be able to connect to vulkan.
@@ -39,7 +28,18 @@ cd lib32-nvidia-470xx-utils
 makepkg -si
 ```
 
-**It is NOT** necessary to:
+### For new cards
+
+Just install nvidia-open.
+
+**NOTE: Select correct driver that shall provide the lib32-vulkan-driver**
+
+```
+sudo pacman -Sy nvidia-open
+#SELECT lib32-nvidia-utils when asked!!!
+```
+
+### It is **NOT** necessary to:
 - modify mkinitcpio to load modules early or remove kms(nouvaeu driver)
 - set drm kernel parameters in grub or systemd
 - add pacman hook
@@ -70,6 +70,8 @@ sudo pacman -Sy nvtop vulkan-tools glmark2
 
 
 ### Check that hyprland and its application is using internal GPU
+
+If you have an internal GPU that is..
 
 ```
 [name@alienware ~]$ glmark2
