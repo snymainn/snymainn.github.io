@@ -43,17 +43,17 @@ timedatectl set-ntp true
 timedatactl status
 ```
 - Partition disks with the following partitions
+   - EFI system partition if you booted in UEFI mode (check if dir /sys/firmware/efi/efivars is present)
+    - EFI partition should probably be first and must a least be 1GB
   - Root partition /
-  - EFI system partition if you booted in UEFI mode (check if dir /sys/firmware/efi/efivars is present)
-    - EFI partition should probably be first and must a least be 260MB
   - Swap partion (more than 512MB)
   - Optional home partiton /home/
 ```
 fdisk -l (take note of the disk you will be using here)
 cfdisk /dev/sd<a|b|c> 
 # Do not use the number after sd<letter> 
-# Select dos for BIOS boot with MBR or gpt for UEFI boot
-# Make root partition bootable
+# Select dos for BIOS boot with MBR or efi/gpt for UEFI boot
+# Make root or efi partition bootable
 # Set type swap on swap partition
 # Select Write og answer yes
 ```
@@ -62,6 +62,7 @@ cfdisk /dev/sd<a|b|c>
 ```
 # First list disks to get devicenames and then issue format commands
 fdisk -l
+mkfs.fat -F 32 /dev/sdxY # If EFI partition
 mkfs.btrfs /dev/<root device>
 mkswap /dev/<swap device>
 mkfs.btrfs /dev/<home device>
@@ -73,6 +74,7 @@ mkfs.btrfs /dev/<home device>
 
 - Mount the root, home and swap partitions
 ```
+mkdir /mnt/efi; mount /dev/sdxY /mnt/efi # If efi boot
 mount /dev/<root partition> /mnt
 swapon /dev/<swap partition>
 # If you created and home partition
@@ -146,12 +148,23 @@ sudo echo "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi11n.
 ```
 - Set root passwd with 
 `passwd`
-- Install boot loader
+- Install boot loader, old legacy version
 ```
 # It is important the the last config step reports that a linux image is found
 pacman -S grub os-prober
 grub-install /dev/<main device without number>
-grub-mkconfig –o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+- Install boot loader, EFI version
+```
+# It is important the the last config step reports that a linux image is found
+pacman -S grub os-prober efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+mkdir /mnt/windows
+mount /dev/sda1 /mnt/windows/ # Or where EFI windows boot mgr is
+#Add GRUB_DISABLE_OS_PROBER=false to /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 - Exit chroot and reboot
