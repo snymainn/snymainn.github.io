@@ -74,7 +74,6 @@ mkfs.btrfs /dev/<home device>
 
 - Mount the root, home and swap partitions
 ```
-mkdir /mnt/efi; mount /dev/sdxY /mnt/efi # If efi boot
 mount /dev/<root partition> /mnt
 swapon /dev/<swap partition>
 # If you created and home partition
@@ -148,7 +147,7 @@ sudo echo "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi11n.
 ```
 - Set root passwd with 
 `passwd`
-- Install boot loader, old legacy version
+- Install boot loader, old LEGACY version, see below for EFI
 ```
 # It is important the the last config step reports that a linux image is found
 pacman -S grub os-prober
@@ -162,7 +161,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman -S grub os-prober efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 mkdir /mnt/windows
-mount /dev/sda1 /mnt/windows/ # Or where EFI windows boot mgr is
+mount /dev/<windows boot mgr partition> /mnt/windows/
 #Add GRUB_DISABLE_OS_PROBER=false to /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
