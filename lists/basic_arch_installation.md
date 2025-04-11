@@ -199,7 +199,7 @@ pacman -S vivaldi
 ```
 - Tools
 ```
-pacman -S git htop openssh libreoffice-still keepassxc vscode shotwell screenfetch gimp
+pacman -S git htop openssh libreoffice-still keepassxc vscode shotwell screenfetch gimp gnome-calculator
 # Add AllowUsers to /etc/ssh/sshd_config
 systemctl enable sshd
 ```
