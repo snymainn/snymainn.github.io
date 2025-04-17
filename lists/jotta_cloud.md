@@ -3,7 +3,7 @@
 - Install jotta from AUR package
 - Run `run_jottad` which enabled user based systemd service
 - Login with key generated on jotta web page 
-- Setup sync
+- Setup sync - [jottacloud: Sync-help](https://docs.jottacloud.com/en/articles/5859533-using-the-sync-folder-with-jottacloud-cli)
 - Start sync
 - Do picture download
 
