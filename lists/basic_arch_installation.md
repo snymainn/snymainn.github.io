@@ -217,3 +217,18 @@ pacman -Sy alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontro
 
 Add `set bell-style none` to `/etc/inputrc`
 
+## Install solaar to check battery on logitech devices
+
+```
+pacman -S solaar
+```
+
+Download udev permissions from git repo:
+[solaar git repo](https://github.com/pwr-Solaar/Solaar/tree/master/rules.d-uinput) and copy to `/etc/udev/rules.d/` to enable access to devices without being root (I wonder if this is completely safe)
+
+```
+sudo cp ~/Downloads/42-logitech-unify-permissions.rules /etc/udev/rules.d/
+```
+Then reboot computer to make udev rules take effect.
+
+Then it is possible to issue `solaar` command. 
