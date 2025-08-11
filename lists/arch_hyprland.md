@@ -110,9 +110,22 @@ exec-once = hypridle
 
 - Configure hyprshot
 
+Add keyboard shortcut, which I will never remember, and a desktop file so wofi finds it and it can be found with SUPER + R
+
 ```
 vim ~/.config/hypr/hyprland.conf
 bind = $mainMod ALT, S, exec, hyprshot -m region -o ~/Pictures/
+
+vim ~/.local/share/applications/hyprshot.desktop
+# Copy or link this file in ~/.local/share/applications/
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+NoDisplay=false
+Exec=hyprshot -m region -o ~/Pictures/
+Name=Screenshot
+Comment=Custom definition for hyprshot
 ```
 
 # Install and configure waybar
