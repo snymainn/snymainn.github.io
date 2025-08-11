@@ -3,7 +3,7 @@
 - Install hyprland and launch hyprland
 ```
 # As your own user
-sudo pacman -Sy hyprland kitty nemo wofi swaylock brightnessctl
+sudo pacman -Sy hyprland kitty nemo wofi swaylock brightnessctl hyprshot mako hypridle
 hyprland
 # Exit hyprland with modifier key and M
 ```
@@ -89,6 +89,30 @@ monitor = HDMI-A-1, preferred, 0x0, 1
 monitor = eDP-1, disable
 #Replace last with this to also use laptop monitor to the right
 #monitor = eDP-1, preferred, 3780x0, 1
+```
+- Configure hypridle
+
+```
+vim ~/.config/hypr/hypridle.conf
+general {
+    ignore_dbus_inhibit = false             # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
+    ignore_systemd_inhibit = false          # whether to ignore systemd-inhibit --what=idle inhibitors
+}
+
+listener {
+    timeout = 300                             # in seconds
+    on-timeout = swaylock -f -c 000000 # lock screen when timeout has passed
+}
+
+vim ~/.config/hypr/hyprland.conf
+exec-once = hypridle
+```
+
+- Configure hyprshot
+
+```
+vim ~/.config/hypr/hyprland.conf
+bind = $mainMod ALT, S, exec, hyprshot -m region -o ~/Pictures/
 ```
 
 # Install and configure waybar
