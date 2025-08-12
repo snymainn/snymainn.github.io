@@ -193,9 +193,9 @@ passwd <name>
 
 ## Add some applications
 
-- Web browser
+- Web browser and spotify
 ```
-pacman -S vivaldi
+pacman -S vivaldi spotify-launcher
 ```
 - Tools
 ```
