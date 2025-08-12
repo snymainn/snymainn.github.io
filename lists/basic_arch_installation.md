@@ -193,9 +193,9 @@ passwd <name>
 
 ## Add some applications
 
-- Web browser and spotify
+- Web browser
 ```
-pacman -S vivaldi spotify-launcher
+pacman -S vivaldi
 ```
 - Tools
 ```
@@ -204,13 +204,13 @@ pacman -S git htop openssh libreoffice-still keepassxc vscode shotwell screenfet
 systemctl enable sshd
 ```
 
-## Configure sound
+## Configure sound and install Spotify
 - Alsa utils will install and enable service alsa-restore
 - Pulseaudio is a server that connects to alsa to control it
 - pavucontrol will popup sound control when icon in waybar pressed
 
 ```
-pacman -Sy alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol
+pacman -Sy alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol spotify-launcher
 ```
 
 ## Disable annoying bell in login shell
