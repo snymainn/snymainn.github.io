@@ -191,16 +191,31 @@ passwd <name>
   - Edit /etc/sudoers file with `visudo` command
   - Add the following to the file:  `<user> ALL=(ALL) ALL`
 
-## Add some applications
+## Add some tools and applications
 
-- Web browser
+- Web browser : vivaldi
+- Photo management : shotwell
+- Office : libreoffice-still
+- Photo editing: imagemagic and gimp
+- Nerd office: texlive
+- Password management: keepassxc
+- Coding: vscode and git
+- ssh login: openssh
+- Task manager: htop
+- Cool sysinfo: screenfetch
+- Calculator: gnome-calculator
+
 ```
-pacman -S vivaldi
+pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode shotwell screenfetch gimp gnome-calculator imagemagick texlive texlive-langeuropean
 ```
-- Tools
+
+## Configure ssh server
+
+- Add ```AllowUsers``` to /etc/ssh/sshd_config to enable user login
+- Enable sshd daemon
 ```
-pacman -S git htop openssh libreoffice-still keepassxc vscode shotwell screenfetch gimp gnome-calculator imagemagick texlive texlive-langeuropean
-# Add AllowUsers to /etc/ssh/sshd_config
+vim /etc/sshd_config
+# Add AllowUsers
 systemctl enable sshd
 ```
 
