@@ -247,3 +247,14 @@ sudo cp ~/Downloads/42-logitech-unify-permissions.rules /etc/udev/rules.d/
 Then reboot computer to make udev rules take effect.
 
 Then it is possible to issue `solaar` command. 
+
+## Install kuro to get Microsoft ToDo
+
+There are several versions. This is an appimage version that bundles everything in one image and uses fuse2 to run.
+I am co maintainer on this one. 
+
+```
+git clone https://aur.archlinux.org/kuro-appimage.git
+cd kuro-appimage
+makepkg -si
+```
