@@ -248,6 +248,23 @@ Then reboot computer to make udev rules take effect.
 
 Then it is possible to issue `solaar` command. 
 
+## Enable access for Lemokey/Keychron web config tools
+
+My Lemokey mouse G2 worked out of the box on linux, but the web configuration tool [launcher.lemokey.com](https://launcher.lemokey.com/) was not able to access the mouse.
+
+To enable user access to the device I copied the above 42-logitech-unify-permissions.rules files and made a new file [99-lemokey.rules](https://github.com/snymainn/linux_configfiles/blob/main/99-lemokey.rules)  that enabled access. 
+
+To find the device idVendor and idProduct id's the command `lsusb` can be used:
+```
+Bus 001 Device 007: ID 362d:d028  Ultra-Link 8K
+```
+The first hex number is idVendor and second id idProduct. This is the wireless connection. If the mouse was connected with cable a second row would show up with another idProduct for usb. It seems this is idProduct is not necessary in the configuration file.
+
+NOTE: Remember to unplug the cable if connecting wireless or else the web config tool will not find the correct idProduct and complain that firmware needs to be upgraded.  
+
+Reboot when config is copied to `/etc/udev/rules.d/`. 
+
+
 ## Install kuro to get Microsoft ToDo
 
 There are several versions. This is an appimage version that bundles everything in one image and uses fuse2 to run.
