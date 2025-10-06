@@ -248,6 +248,8 @@ Then reboot computer to make udev rules take effect.
 
 Then it is possible to issue `solaar` command. 
 
+Update Oct, 2025: Need to set MODE="666" to enable access to devices.
+
 ## Enable access for Lemokey/Keychron web config tools
 
 My Lemokey mouse G2 worked out of the box on linux, but the web configuration tool [launcher.lemokey.com](https://launcher.lemokey.com/) was not able to access the mouse.
@@ -264,6 +266,7 @@ NOTE: Remember to unplug the cable if connecting wireless or else the web config
 
 Reboot when config is copied to `/etc/udev/rules.d/`. 
 
+Update Oct, 2025: Need to set MODE="666" to enable access to devices.
 
 ## Install kuro to get Microsoft ToDo
 
