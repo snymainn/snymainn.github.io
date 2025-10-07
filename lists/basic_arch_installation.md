@@ -221,11 +221,12 @@ systemctl enable sshd
 
 ## Configure sound and install Spotify
 - Alsa utils will install and enable service alsa-restore
-- Pulseaudio is a server that connects to alsa to control it
+- Pipewire is a server that connects to alsa to control it
+  - It is a replacement for pulseaudio and works with both cosmic and hyprland desktop
 - pavucontrol will popup sound control when icon in waybar pressed
 
 ```
-pacman -Sy alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol spotify-launcher
+pacman -Sy pipewire pipewire-pulse alsa-utils pavucontrol spotify-launcher
 ```
 
 ## Disable annoying bell in login shell
@@ -248,7 +249,7 @@ Then reboot computer to make udev rules take effect.
 
 Then it is possible to issue `solaar` command. 
 
-Update Oct, 2025: Need to set MODE="666" to enable access to devices.
+Update Oct, 2025: Need to add MODE="666" to the bottom of the rules file to enable config access to devices.
 
 ## Enable access for Lemokey/Keychron web config tools
 
@@ -266,7 +267,7 @@ NOTE: Remember to unplug the cable if connecting wireless or else the web config
 
 Reboot when config is copied to `/etc/udev/rules.d/`. 
 
-Update Oct, 2025: Need to set MODE="666" to enable access to devices.
+Update Oct, 2025: Need to add MODE="666" to the bottom of the rules file to enable config access to devices.
 
 ## Install kuro to get Microsoft ToDo
 
