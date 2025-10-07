@@ -36,6 +36,12 @@ My kitty config with comments can be fetched here: [kitty.config](https://github
 
 Config file location: ```~/.config/kitty/kitty.conf```
 
+Most settings can be adjusted with kitten, e.g. themes
+
+```
+kitten themes
+```
+
 - Run once in terminal to enable kitty as terminal in nemo
 
 ```
