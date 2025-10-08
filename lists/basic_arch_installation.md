@@ -279,3 +279,19 @@ git clone https://aur.archlinux.org/kuro-appimage.git
 cd kuro-appimage
 makepkg -si
 ```
+
+## Install Microsoft teams
+
+There are several versions of teams in the AUR.
+I have used this one which seems to work ok:
+https://aur.archlinux.org/packages/teams-for-linux-bin
+
+I also added a line in the hyprland config to start teams minimized when starting hyprland. `exec-once = /opt/teams-for-linux/teams-for-linux %U --minimized`
+
+Installation:
+```
+git clone https://aur.archlinux.org/teams-for-linux-bin.git
+cd teams-for-linux-bin
+makepkg -si
+```
+
