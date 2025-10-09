@@ -2,7 +2,7 @@
 
 - Install hyprland and launch hyprland
   - hyprland requires wayland and will be installed automatically
-- Filebrowser: nemo
+- Filebrowser: nemo with gthumb as image viewer
 - Terminal: kitty
 - Launcher: wofi
 - Lockscreen: swaylock
@@ -11,7 +11,7 @@
 - Automatically lock screen: hypridle
 ```
 # As your own user
-sudo pacman -Sy hyprland kitty nemo wofi swaylock brightnessctl hyprshot mako hypridle
+sudo pacman -Sy hyprland kitty nemo gthumb wofi swaylock brightnessctl hyprshot mako hypridle
 ```
 
 My hyprland config file with comments can be fetched here:

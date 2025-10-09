@@ -194,7 +194,7 @@ passwd <name>
 ## Add some tools and applications
 
 - Web browser : vivaldi
-- Photo management : shotwell
+- ~~Photo management : shotwell~~ Seems to be to slow and buggy
 - Office : libreoffice-still
 - Photo editing: imagemagic and gimp
 - Nerd office: texlive
