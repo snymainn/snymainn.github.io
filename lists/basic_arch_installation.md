@@ -265,6 +265,8 @@ The first hex number is idVendor and second id idProduct. This is the wireless c
 
 NOTE: Remember to unplug the cable if connecting wireless or else the web config tool will not find the correct idProduct and complain that firmware needs to be upgraded.  
 
+NOTE2: It might be necessary to connect it with cable first after the rules are applied.
+
 Reboot when config is copied to `/etc/udev/rules.d/`. 
 
 Update Oct, 2025: Need to add MODE="666" to the bottom of the rules file to enable config access to devices.
