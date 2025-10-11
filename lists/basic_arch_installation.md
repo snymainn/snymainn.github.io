@@ -196,8 +196,8 @@ passwd <name>
 - Web browser : vivaldi
 - ~~Photo management : shotwell~~ Seems to be to slow and buggy
 - Office : libreoffice-still
-- Photo editing: imagemagic and gimp
-- Nerd office: texlive
+- Photo editing: gimp
+- Office for science nerds: texlive texlive-langeuropean
 - Password management: keepassxc
 - Coding: vscode and git
 - ssh login: openssh
@@ -206,7 +206,7 @@ passwd <name>
 - Calculator: gnome-calculator
 
 ```
-pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode shotwell screenfetch gimp gnome-calculator imagemagick texlive texlive-langeuropean
+pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode screenfetch gimp gnome-calculator texlive texlive-langeuropean
 ```
 
 ## Configure ssh server
@@ -214,8 +214,8 @@ pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode shotwell s
 - Add ```AllowUsers``` to /etc/ssh/sshd_config to enable user login
 - Enable sshd daemon
 ```
-vim /etc/sshd_config
-# Add AllowUsers
+vim /etc/ssh/sshd_config
+# Add AllowUsers <username>
 systemctl enable sshd
 ```
 
@@ -296,4 +296,3 @@ git clone https://aur.archlinux.org/teams-for-linux-bin.git
 cd teams-for-linux-bin
 makepkg -si
 ```
-

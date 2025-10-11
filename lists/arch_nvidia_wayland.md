@@ -30,13 +30,13 @@ makepkg -si
 
 ### For new cards
 
-Just install nvidia-open.
+Just install nvidia-open or nvidia for a bit older cards.
+See info at [arch wiki](https://wiki.archlinux.org/title/NVIDIA)
 
-**NOTE: Select correct driver that shall provide the lib32-vulkan-driver**
+
 
 ```
 sudo pacman -Sy nvidia-open
-#SELECT lib32-nvidia-utils when asked!!!
 ```
 
 ### It is **NOT** necessary to:
@@ -88,6 +88,8 @@ If you have an internal GPU that is..
 
 ### Install steam
 
+**NOTE: Select correct driver that shall provide the lib32-vulkan-driver**
+
 #### Enable multilib
 ```
 sudo vim /etc/pacman.conf
@@ -95,6 +97,7 @@ sudo vim /etc/pacman.conf
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 sudo pacman -Sy steam
+#SELECT lib32-nvidia-utils when asked!!!
 ```
 
 ### Play games
