@@ -112,3 +112,9 @@ Even though you have no integrated graphics card, the fps will be around 30 with
 Thats it. In summary clone two packages from AUR, build and install them togheter with linux-headers. A range of other packages will also be installed because `-s` to makepkg will resolve dependencies. 
 
 In my experience the packages themselves mutes the nouvaeu driver and no other config is necessary.
+
+NOTE for some steam games that do not launch:
+- Install execstack from aur
+- go to .local/share/...game.../bin/
+- execstack -c engine.so
+- execstack -c valve_api.so
