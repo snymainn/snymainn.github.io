@@ -104,7 +104,7 @@ hwclock --systohc
 ```
 - Set localization and generate locales
   - Edit /etc/locale.gen and uncomment the types you will be using in next step locale.conf
-    - For this was `en_US-UTF-8 UTF-8` and `nb_NO ISO-8859-1` 
+    - For this was `en_US-UTF-8 UTF-8` and `nb_NO.UTF-8 UTF-8` 
 ```
 vim /etc/locale.gen
 locale-gen
@@ -113,7 +113,7 @@ locale-gen
 ```
 # E.g. for Norwegian formats, but English userinterface
 vim /etc/locale.conf
-LANG=nb_NO.ISO-8859-1
+LANG=nb_NO.UTF-8
 LANGUAGE=en_US.UTF-8
 LC_MESSAGES=en_US.UTF-8
 ```
