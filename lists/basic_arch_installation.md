@@ -185,7 +185,7 @@ useradd -m <name>
 passwd <name>
 ```
 
-- Add user to sudoers
+- Add user to sudoers (maybe only on protected networks)
   - Make sure vim is installed
   - Add EDITOR=vim to environment, e.g. update .bashrc with `export EDITOR=vim`
   - Edit /etc/sudoers file with `visudo` command
@@ -213,6 +213,8 @@ pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode screenfetc
 
 - Add ```AllowUsers``` to /etc/ssh/sshd_config to enable user login
 - Enable sshd daemon
+- Maybe disable if travelling and using open networks
+
 ```
 vim /etc/ssh/sshd_config
 # Add AllowUsers <username>
@@ -295,4 +297,26 @@ Installation:
 git clone https://aur.archlinux.org/teams-for-linux-bin.git
 cd teams-for-linux-bin
 makepkg -si
+```
+
+## Security
+
+Using simple nmap commands show that only the ssh daemon port is open, but is not accepting root logins. So it should be fairly safe. 
+
+I also tried the vulscan script from arch repo with nmap, but that seemed to have a bug.
+
+Thinking about it is probably smart to 
+- disable the ssh daemon when outside the home network
+- not have sudo rights on user
+- and be careful with the passwords
+
+```
+# Scan max range of ports
+nmap <ip> -p 1-65535
+
+# Detect version of ssh protocol
+nmap -sV <ip>
+
+# Prope the ssh port for max information
+sudo nmap -p 22 -sU -A <ip>
 ```
