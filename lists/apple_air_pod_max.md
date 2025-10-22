@@ -24,7 +24,7 @@ bluetoothctl -- connect <mac address>
 ```
 
 To make connection easy an alias can be added to e.g. bashrc
-'''
+```
 alias connect_max_headephones='bluetoothctl -- connect <mac address>
-'''
+```
 
