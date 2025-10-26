@@ -30,7 +30,12 @@ jotta-cli sync stop
 jotta-cli sync start
 ```
 
-In the long run it would probably be better to add a dependency in the jottad.service startup on the network. 
+In the long run it would probably be better to add a dependency in the jottad.service startup on the network. A quick fix is to add a delay in the startup of the service:
+```
+sudo vim /usr/lib/systemd/user/jottad.service
+#Add before ExecStart to sleep 10 seconds before start:
+ExecStartPre=/bin/sleep 10 
+```
 
 Btw the jottad.service is registered on the user, so to see status etc. --user must be added to the systemctl command.
 
