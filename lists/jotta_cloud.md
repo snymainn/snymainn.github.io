@@ -43,3 +43,17 @@ Btw the jottad.service is registered on the user, so to see status etc. --user m
 systemctl --user status jottad.service
 ```
 
+# How to sync images that is backed up from mobile 
+
+Jottacloud does not backup the mobile images to a sync folder, but to a backup folder online. That means that it is not automatically synched to a pc where jottacloud is running. 
+
+The workaround for this is the following procedure:
+- (Optional) Clean your local and remote Archive sync folder if you want to make sure only the new images are present there
+- Log in to jotta web with the following command: ```jotta-cli web```
+- Go to Backups > Photo Timeline Uploads
+- Mark and move/copy the images you want to sync to the computer to Archive
+- When images is moved/copied to Archive, use jotta-cli to syncronize Archive to pc with this command:
+```
+jotta-cli download Archive <your Archive location on your pc> --merge
+```
+- I prefer to keep the cloud Timeline and remote and local Archive clean because I only want any new images taken by the phone to be present after the sync procedure. This is because I move the images to Jottacloud sync folder on the pc after I have synched them to my local Archive directoy. 
