@@ -204,9 +204,10 @@ passwd <name>
 - Task manager: htop
 - Cool sysinfo: screenfetch
 - Calculator: gnome-calculator
+- Videoplayer: vlc vlc-plugins-all
 
 ```
-pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode screenfetch gimp gnome-calculator texlive texlive-langeuropean
+pacman -S vivaldi git htop openssh libreoffice-still keepassxc vscode screenfetch gimp gnome-calculator texlive texlive-langeuropean vlc vlc-plugins-all
 ```
 
 ## Configure ssh server
