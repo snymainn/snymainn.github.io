@@ -28,7 +28,27 @@ Changes that might be important for all
   - ```monitor=,preferred,auto,1```
 - Enable dark mode in launcher drun and filebrowser nemo
   - ```env = GTK_THEME,Adwaita:dark```
+- Some apps like Thunderbird might require this to be run in the terminal
+  - ```gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'```
 
+
+Remap right ctrl key to left meta with keyd for later use i hyprland when mouse is used with left hand
+```
+#As root
+pacman -S keyd
+vi /etc/keyd/default.conf
+systemctrl enable keyd
+systemctrl start keyd
+keyd reload
+```
+
+/etc/keyd/default.conf:
+```
+[ids]
+*
+[main]
+rightcontrol = leftmeta
+```
 
 ## Kitty config
 
